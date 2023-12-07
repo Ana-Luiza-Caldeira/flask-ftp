@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Busca de Arquivos</title>
+</head>
+<body>
+<h1>Busca de Arquivos</h1>
+<form action="/buscar" method="post">
+<label for="termo_busca">Digite o termo de busca:</label>
+<input type="text" id="termo_busca" name="termo_busca" required>
+<button type="submit">Buscar</button>
+</form>
+ 
+    {% if arquivos_encontrados %}
+<h2>Resultados para '{{ termo_busca }}':</h2>
+<ul>
+            {% for arquivo in arquivos_encontrados %}
+<li><a href="{{ url_for('visualizar_pdf', nome_arquivo=arquivo) }}">{{ arquivo }}</a></li>
+            {% endfor %}
+</ul>
+    {% endif %}
+</body>
+</html>
