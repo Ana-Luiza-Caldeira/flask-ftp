@@ -11,7 +11,7 @@ def index():
 def buscar_arquivos():
     termo_busca = request.form.get('termo_busca', '')
  
-    # Listar todos os arquivos PDF no diretório 'arquivos'
+    # Listar todos os arquivos PDF no diretório 'media'
     arquivos_encontrados = [f for f in os.listdir('media') if f.endswith('.pdf') and termo_busca.lower() in f.lower()]
  
     return render_template('index.html', arquivos_encontrados=arquivos_encontrados, termo_busca=termo_busca)
