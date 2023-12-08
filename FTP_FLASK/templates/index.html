@@ -7,7 +7,7 @@
 <title>Busca de Arquivos</title>
 </head>
 <body>
-<h1>Busca de Arquivos</h1>
+<center><h1>Busca de Arquivos</h1>
 <form action="/buscar" method="post">
 <label for="termo_busca">Digite o termo de busca:</label>
 <input type="text" id="termo_busca" name="termo_busca" required>
@@ -15,6 +15,7 @@
 </form>
  
     {% if arquivos_encontrados %}
+</center>
 <h2>Resultados para '{{ termo_busca }}':</h2>
 <ul>
             {% for arquivo in arquivos_encontrados %}
